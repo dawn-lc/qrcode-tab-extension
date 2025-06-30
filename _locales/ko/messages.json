@@ -1,0 +1,18 @@
+{
+    "extensionName": {
+        "message": "탭 QR 코드",
+        "description": "확장 프로그램 이름"
+    },
+    "extensionDescription": {
+        "message": "현재 탭 URL의 QR 코드 생성 또는 사용자 정의 QR 코드 생성",
+        "description": "확장 프로그램 설명"
+    },
+    "extensionTitle": {
+        "message": "현재 탭의 QR 코드 생성",
+        "description": "확장 프로그램 액션 제목"
+    },
+    "clickToChangeSize": {
+        "message": "크기 변경을 위해 클릭",
+        "description": "QR 코드 위에 마우스를 올렸을 때 툴팁 텍스트"
+    }
+}

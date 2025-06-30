@@ -3,54 +3,16 @@
         "message": "QR Code Tab",
         "description": "Extension name"
     },
-
     "extensionDescription": {
-        "message": "Display QR Code images for current active tab URL and for an unified URL of all highlighted tabs",
+        "message": "Create QR Code for current tab URL or generate custom QR Code",
         "description": "Extension description"
     },
-
     "extensionTitle": {
-        "message": "Show current tab URL as QR Code",
+        "message": "Create QR Code for current tab",
         "description": "Extension action title"
     },
-
-    "clickToZoom": {
-        "message": "Click on image to zoom",
-        "description": "Zoom in generated QR Code image"
-    },
-
-    "resetZoom": {
-        "message": "reset",
-        "description": "Resets zoom on the generated QR Code image"
-    },
-
-    "downloadImage": {
-        "message": "Download image",
-        "description": "Save generated QR Code image as PNG"
-    },
-
-    "activeTabLabel": {
-        "message": "Active tab",
-        "description": "Current focused tab"
-    },
-
-    "highlightedTabLabel": {
-        "message": "Selected tabs",
-        "description": "All highlighted tabs"
-    },
-
-    "highlightedTabInstructions": {
-        "message": "Select (highlight) two or more tabs to create a single unified link address",
-        "description": "Message shown when there is not enough highlighted tabs"
-    },
-
-    "highlightedTabUnifiedLinkCopy": {
-      "message": "Copy unified link",
-      "description": "Click to copy unified link address"
-    },
-
-    "highlightedTabUnifiedLinkEncode": {
-      "message": "Encode link",
-      "description": "Toggle if unified link address should be encoded"
+    "clickToChangeSize": {
+        "message": "Click to change size",
+        "description": "Tooltip text when hovering over QR code"
     }
 }

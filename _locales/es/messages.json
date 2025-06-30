@@ -3,54 +3,16 @@
         "message": "QR Code Tab",
         "description": "Nombre del complemento"
     },
-
     "extensionDescription": {
-        "message": "Muestra imagenes de código QR para la URL de la pestaña actual activa y para una URL unificada de todas las pestañas seleccionadas",
+        "message": "Crear código QR para la URL de la pestaña actual o generar un código QR personalizado",
         "description": "Descripción del complemento"
     },
-
     "extensionTitle": {
-        "message": "Mostrar URL de la pestaña actual como código QR",
+        "message": "Crear código QR para la pestaña actual",
         "description": "Título de la acción del complemento"
     },
-
-    "clickToZoom": {
-        "message": "Click en la imagen para acercar",
-        "description": "Acercar la imagen del código QR generado"
-    },
-
-    "resetZoom": {
-        "message": "reset",
-        "description": "Alejar la imagen del código QR generado"
-    },
-
-    "downloadImage": {
-        "message": "Guardar imagen",
-        "description": "Salva la imagen del código QR generado como PNG"
-    },
-
-    "activeTabLabel": {
-        "message": "Pestaña activa",
-        "description": "Pestaña actual enfocada"
-    },
-
-    "highlightedTabLabel": {
-        "message": "Pestañas seleccionadas",
-        "description": "Todas las pestañas resaltadas"
-    },
-
-    "highlightedTabInstructions": {
-        "message": "Seleccione (resalte) dos o más pestañas para crear una dirección web unificada",
-        "description": "Mensaje que se muestra cuando no hay suficientes pestañas resaltadas"
-    },
-
-    "highlightedTabUnifiedLinkCopy": {
-      "message": "Copiar dirección unificada",
-      "description": "Haga clic para copiar dirección web unificada"
-    },
-
-    "highlightedTabUnifiedLinkEncode": {
-      "message": "Codificar dirección web",
-      "description": "Toggle if unified link address should be encoded"
+    "clickToChangeSize": {
+        "message": "Haga clic para cambiar el tamaño",
+        "description": "Texto de ayuda al pasar el ratón sobre el código QR"
     }
 }

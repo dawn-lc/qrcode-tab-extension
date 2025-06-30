@@ -1,0 +1,130 @@
+:root {
+    --bg-light: #fafafa;
+    --bg-dark: #262626;
+    --text-light: #262626;
+    --text-dark: #ffffff;
+    --primary-light: #1a73e8;
+    --primary-dark: #4D90C7;
+    --highlight-light: floralwhite;
+    --highlight-dark: #303030;
+    --border-light: #ccc;
+    --border-dark: #707070;
+
+    --background: var(--bg-light);
+    --text: var(--text-light);
+    --actionable: var(--primary-light);
+    --actionable-highlight: var(--highlight-light);
+    --border: var(--border-light);
+    --input-bg-light: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    --input-bg-dark: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+    --input-bg: var(--input-bg-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: var(--bg-dark);
+        --text: var(--text-dark);
+        --actionable: var(--primary-dark);
+        --actionable-highlight: var(--highlight-dark);
+        --border: var(--border-dark);
+        --input-bg: var(--input-bg-dark);
+    }
+}
+
+@-moz-document url-prefix() {
+    html {
+        scrollbar-width: none
+    }
+}
+
+body {
+    margin: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html,
+body {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body {
+    padding: 1rem;
+    position: relative;
+    max-height: 600px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#qr-input {
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#qr-input:focus {
+    outline: none;
+    border-color: var(--actionable);
+    box-shadow: 0 0 0 3px rgba(77, 144, 199, 0.2);
+}
+
+#qrcode-canvas {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+}
+
+#qrcode-canvas canvas {
+    width: 100%;
+    height: auto;
+    max-width: 28rem;
+    object-fit: contain;
+}
+
+@media (prefers-color-scheme: dark) {
+    #qrcode-canvas {
+        background: white;
+        padding: 8px;
+        border-radius: 8px;
+    }
+}
+
+@media (min-height: 600px) {
+    body {
+        padding: 1.5rem;
+    }
+}

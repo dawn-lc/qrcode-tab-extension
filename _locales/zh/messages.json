@@ -1,46 +1,18 @@
 {
     "extensionName": {
-        "message": "二维码标签页",
+        "message": "标签页二维码",
         "description": "扩展名称"
     },
     "extensionDescription": {
-        "message": "为当前活动标签页URL和所有高亮标签页的统一URL显示二维码图片",
+        "message": "为当前标签页URL创建二维码或生成自定义二维码",
         "description": "扩展描述"
     },
     "extensionTitle": {
-        "message": "将当前标签页URL显示为二维码",
+        "message": "为当前标签页创建二维码",
         "description": "扩展操作标题"
     },
-    "clickToZoom": {
-        "message": "点击图片放大",
-        "description": "放大生成的二维码图片"
-    },
-    "resetZoom": {
-        "message": "重置",
-        "description": "重置生成的二维码图片的缩放"
-    },
-    "downloadImage": {
-        "message": "下载图片",
-        "description": "将生成的二维码图片保存为PNG"
-    },
-    "activeTabLabel": {
-        "message": "活动标签页",
-        "description": "当前聚焦的标签页"
-    },
-    "highlightedTabLabel": {
-        "message": "已选标签页",
-        "description": "所有高亮的标签页"
-    },
-    "highlightedTabInstructions": {
-        "message": "选择(高亮)两个或更多标签页以创建统一链接地址",
-        "description": "当高亮标签页不足时显示的消息"
-    },
-    "highlightedTabUnifiedLinkCopy": {
-        "message": "复制统一链接",
-        "description": "点击复制统一链接地址"
-    },
-    "highlightedTabUnifiedLinkEncode": {
-        "message": "编码链接",
-        "description": "切换是否对统一链接地址进行编码"
+    "clickToChangeSize": {
+        "message": "点击切换尺寸",
+        "description": "鼠标悬停在二维码上时的提示文本"
     }
 }

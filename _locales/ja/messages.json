@@ -1,0 +1,18 @@
+{
+    "extensionName": {
+        "message": "タブQRコード",
+        "description": "拡張機能名"
+    },
+    "extensionDescription": {
+        "message": "現在のタブURLのQRコードを作成またはカスタムQRコードを生成",
+        "description": "拡張機能の説明"
+    },
+    "extensionTitle": {
+        "message": "現在のタブのQRコードを作成",
+        "description": "拡張機能アクションタイトル"
+    },
+    "clickToChangeSize": {
+        "message": "クリックでサイズ変更",
+        "description": "QRコード上にマウスを置いた時のツールチップテキスト"
+    }
+}

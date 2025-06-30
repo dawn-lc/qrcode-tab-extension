@@ -3,54 +3,16 @@
         "message": "QR Code Tab",
         "description": "Nome da extensão"
     },
-
     "extensionDescription": {
-        "message": "Exibe imagens de código QR para a URL da aba atual ativa e para um URL unificado de todas as abas selecionadas",
+        "message": "Criar código QR para a URL da aba atual ou gerar um código QR personalizado",
         "description": "Descrição da extensão"
     },
-
     "extensionTitle": {
-        "message": "Mostrar URL da aba atual como código QR",
+        "message": "Criar código QR para a aba atual",
         "description": "Título da ação da extensão"
     },
-
-    "clickToZoom": {
-        "message": "Clique na imagem para ampliar",
-        "description": "Ampliar a imagem gerada do código QR"
-    },
-
-    "resetZoom": {
-        "message": "redefinir",
-        "description": "Redefine a ampliação feita na imagem gerada do código QR"
-    },
-
-    "downloadImage": {
-        "message": "Salvar imagem",
-        "description": "Salva a imagem do código QR gerado como PNG"
-    },
-
-    "activeTabLabel": {
-        "message": "Aba ativa",
-        "description": "Aba atual focada"
-    },
-
-    "highlightedTabLabel": {
-        "message": "Abas selecionadas",
-        "description": "Todas as abas destacadas"
-    },
-
-    "highlightedTabInstructions": {
-        "message": "Selecione (destaque) duas ou mais abas para criar um endereço de link unificado",
-        "description": "Mensagem exibida quando não há abas realçadas suficientes"
-    },
-
-    "highlightedTabUnifiedLinkCopy": {
-      "message": "Copiar link unificado",
-      "description": "Clique para copiar endereço de link unificado"
-    },
-
-    "highlightedTabUnifiedLinkEncode": {
-      "message": "Codificar link",
-      "description": "Alternar se o endereço de link unificado deve ser codificado"
+    "clickToChangeSize": {
+        "message": "Clique para alterar o tamanho",
+        "description": "Texto de dica ao passar o mouse sobre o código QR"
     }
 }
