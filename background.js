@@ -1,7 +1,11 @@
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (tab.url) {
-        chrome.action.enable(tabId);
-    } else {
-        chrome.action.disable(tabId);
+function initPageAction(tabId) {
+    browser.pageAction.show(tabId);
+}
+var gettingAllTabs = browser.tabs.query({});
+gettingAllTabs.then((tabs) => {
+    for (let tab of tabs) {
+        initPageAction(tab.id);
     }
 });
+browser.tabs.onUpdated.removeListener(initPageAction);
+browser.tabs.onUpdated.addListener(initPageAction);
