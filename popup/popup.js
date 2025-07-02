@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             margin: 8 * 3,
             type: "canvas",
             shape: "square",
+            qrOptions: {
+                errorCorrectionLevel: 'H'
+            },
             dotsOptions: {
                 type: "extra-rounded",
                 roundSize: false,
