@@ -18,6 +18,12 @@
     --input-bg-light: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     --input-bg-dark: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
     --input-bg: var(--input-bg-light);
+    --input-shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --input-shadow-dark: 0 2px 5px rgba(255, 255, 255, 0.1);
+    --input-shadow: var(--input-shadow-light);
+    --input-focus-shadow-light: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    --input-focus-shadow-dark: 0 0 0 3px rgba(77, 144, 199, 0.3);
+    --input-focus-shadow: var(--input-focus-shadow-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +34,8 @@
         --actionable-highlight: var(--highlight-dark);
         --border: var(--border-dark);
         --input-bg: var(--input-bg-dark);
+        --input-shadow: var(--input-shadow-dark);
+        --input-focus-shadow: var(--input-focus-shadow-dark);
     }
 }
 
@@ -98,7 +106,7 @@ body {
     border-radius: 8px;
     background: var(--input-bg);
     color: var(--text);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--input-shadow);
     transition: all 0.3s ease;
     white-space: nowrap;
     overflow: hidden;
@@ -108,5 +116,5 @@ body {
 #qr-input:focus {
     outline: none;
     border-color: var(--actionable);
-    box-shadow: 0 0 0 3px rgba(77, 144, 199, 0.2);
+    box-shadow: var(--input-focus-shadow);
 }
