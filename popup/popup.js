@@ -5,6 +5,31 @@ async function getCurrentTab() {
         });
     });
 }
+function debounce(func, delay, { immediate = false } = {}) {
+    let timer = null;
+    const debounced = function (...args) {
+        const callNow = immediate && !timer;
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            timer = null;
+            if (!immediate) {
+                func.apply(this, args);
+            }
+        }, delay);
+        if (callNow) {
+            func.apply(this, args);
+        }
+    };
+    debounced.cancel = () => {
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+    };
+    return debounced;
+}
 document.addEventListener('DOMContentLoaded', async () => {
     const SIZE_LEVELS = {
         small: 16,
@@ -14,21 +39,53 @@ document.addEventListener('DOMContentLoaded', async () => {
     const canvasContainer = document.getElementById('qrcode-canvas');
     const input = document.getElementById('qr-input');
     const tab = await getCurrentTab();
+    const tabFavIcon = tab.favIconUrl;
 
-    function updateCanvas(sizeLevel = "small") {
-        const size = `${SIZE_LEVELS[sizeLevel] * 16}px`;
-        canvasContainer.style.width = size;
-        canvasContainer.style.height = size;
-        canvasContainer.dataset.sizeLevel = sizeLevel
+    let QRSizeLevel = "small";
+    let QRSize = SIZE_LEVELS[QRSizeLevel] * 16;
+
+    function updateCanvas(sizeLevel) {
+        QRSizeLevel = sizeLevel;
+        QRSize = SIZE_LEVELS[QRSizeLevel] * 16;
+        document.body.style.width = `${QRSize}px`;
     }
 
     function generateQRCode() {
-        try {
-            while (canvasContainer.lastChild) {
-                canvasContainer.lastChild.remove()
+        let option = {
+            width: QRSize * 3,
+            height: QRSize * 3,
+            margin: 8 * 3,
+            type: "canvas",
+            shape: "square",
+            qrOptions: {
+                errorCorrectionLevel: 'H'
+            },
+            dotsOptions: {
+                type: "extra-rounded",
+                roundSize: false,
+                color: "#262626"
+            },
+            cornersSquareOptions: {
+                color: "#262626"
+            },
+            backgroundOptions: {
+                color: "#fafafa"
             }
-            const text = input.value || tab.url;
-            new QRCodeStyling({ data: text, margin: 8 }).append(canvasContainer);
+        }
+        try {
+            canvasContainer.replaceChildren();
+            option.data = input.value ? input.value : tab.url;
+            if (tabFavIcon && !input.value) {
+                option.image = tabFavIcon;
+                option.imageOptions = {
+                    saveAsBlob: true,
+                    crossOrigin: "anonymous",
+                    hideBackgroundDots: true,
+                    imageSize: 0.25,
+                    margin: 2
+                }
+            }
+            new QRCodeStyling(option).append(canvasContainer);
         } catch (error) {
             console.error(error);
         }
@@ -36,27 +93,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         canvasContainer.title = chrome.i18n.getMessage("clickToChangeSize");
         input.placeholder = tab.url;
-        updateCanvas();
-        generateQRCode(tab.url);
+        updateCanvas(QRSizeLevel);
+        generateQRCode();
     } catch (error) {
         console.error(error);
     }
-
-    input.addEventListener('input', (e) => {
-        const text = e.target.value;
-        if (text) {
-            generateQRCode(text);
-        } else {
-            getCurrentTab().then((tab) => {
-                generateQRCode(tab.url);
-            });
-        }
-    });
-
+    const debouncedInputEvent = debounce(generateQRCode, 300);
+    input.addEventListener('input', debouncedInputEvent);
     canvasContainer.addEventListener('click', () => {
-        const currentLevel = canvasContainer.dataset.sizeLevel || 'small';
         const levels = ['small', 'medium', 'large'];
-        const nextIndex = (levels.indexOf(currentLevel) + 1) % levels.length;
+        const nextIndex = (levels.indexOf(QRSizeLevel) + 1) % levels.length;
         updateCanvas(levels[nextIndex]);
+        generateQRCode();
     });
 });
