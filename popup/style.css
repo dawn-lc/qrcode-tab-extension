@@ -76,8 +76,7 @@ body {
 
 .input-container {
     width: 100%;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 #qr-input {
@@ -102,6 +101,7 @@ body {
 }
 
 #qrcode-canvas {
+    background: var(--background);
     display: block;
     margin: 0 auto;
     cursor: pointer;
@@ -113,18 +113,4 @@ body {
     height: auto;
     max-width: 28rem;
     object-fit: contain;
-}
-
-@media (prefers-color-scheme: dark) {
-    #qrcode-canvas {
-        background: white;
-        padding: 8px;
-        border-radius: 8px;
-    }
-}
-
-@media (min-height: 600px) {
-    body {
-        padding: 1.5rem;
-    }
 }
