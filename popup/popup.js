@@ -30,8 +30,6 @@ function debounce(func, delay, { immediate = false } = {}) {
     };
     return debounced;
 }
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     const SIZE_LEVELS = {
         small: 16,
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             canvasContainer.replaceChildren();
             option.data = input.value ? input.value : tab.url;
-            if (tabFavIcon) {
+            if (tabFavIcon && !input.value) {
                 option.image = tabFavIcon;
                 option.imageOptions = {
                     saveAsBlob: true,
