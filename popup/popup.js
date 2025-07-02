@@ -41,15 +41,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tab = await getCurrentTab();
     const tabFavIcon = tab.favIconUrl;
 
-    let QRSizeLevel = "small"
-    let QRSize = SIZE_LEVELS[QRSizeLevel] * 16
+    let QRSizeLevel = "small";
+    let QRSize = SIZE_LEVELS[QRSizeLevel] * 16;
 
     function updateCanvas(sizeLevel) {
-        QRSizeLevel = sizeLevel
-        QRSize = SIZE_LEVELS[QRSizeLevel] * 16
-        const size = `${QRSize}px`;
-        canvasContainer.style.width = size;
-        canvasContainer.style.height = size;
+        QRSizeLevel = sizeLevel;
+        QRSize = SIZE_LEVELS[QRSizeLevel] * 16;
+        document.body.style.width = `${QRSize}px`;
     }
 
     function generateQRCode() {
