@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^24.0.10",
+    "@types/webextension-polyfill": "^0.12.3",
+    "archiver": "^7.0.1",
+    "esbuild": "0.25.5"
+  },
+  "dependencies": {
+    "qr-code-styling": "^1.9.2",
+    "webextension-polyfill": "^0.12.0"
+  }
+}
